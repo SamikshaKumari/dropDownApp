@@ -1,0 +1,13 @@
+<div class="dropdown" id="drop-down" (click)="toggleArrow()">
+  <span><input type="text" placeholder="{{placeHolder}}" [(ngModel)]="selectedItem"
+      [ngClass]="arrowToggle ? 'icon-rtl-down':'icon-rtl-up'"></span>
+  <label>
+    <input type="checkbox">
+    <div class="ul-cls">
+      <ul [ngClass]="menuList && menuList.length > 7 ? 'scrollAdded':'scrollRemoved'" [ngStyle]="{height:getHeight()}">
+        <li *ngFor="let menu of menuList" value="menu.id" (click)="selectItems(menu)">{{menu.name}}</li>
+      </ul>
+    </div>
+
+  </label>
+</div>
